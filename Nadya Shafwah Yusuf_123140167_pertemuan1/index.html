@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Manajemen Tugas Mahasiswa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Manajemen Tugas Mahasiswa</h1>
+            <p>Kelola semua tugas akademis Anda di satu tempat!</p>
+        </header>
+
+        <main>
+            <section class="task-form-section">
+                <h2>Tambah Tugas Baru</h2>
+                <form id="task-form">
+                    <div class="form-control">
+                        <label for="task-name">Nama Tugas</label>
+                        <input type="text" id="task-name" placeholder="Contoh: Mengerjakan Laporan Praktikum" required>
+                    </div>
+                    <div class="form-control">
+                        <label for="task-course">Mata Kuliah</label>
+                        <input type="text" id="task-course" placeholder="Contoh: Pemrograman Web" required>
+                    </div>
+                    <div class="form-control">
+                        <label for="task-deadline">Deadline</label>
+                        <input type="date" id="task-deadline" required>
+                    </div>
+                    <button type="submit" class="btn">Tambah Tugas</button>
+                </form>
+            </section>
+
+            <section class="task-filter-section">
+                <h2>Daftar Tugas</h2>
+                <div class="filter-controls">
+                    <div class="form-control">
+                        <label for="filter-status">Filter Status</label>
+                        <select id="filter-status">
+                            <option value="all">Semua</option>
+                            <option value="incomplete">Belum Selesai</option>
+                            <option value="complete">Selesai</option>
+                        </select>
+                    </div>
+                    <div class="task-stats">
+                        <p>Tugas Belum Selesai: <span id="incomplete-tasks-count">0</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="task-list-section">
+                <ul id="task-list">
+                    </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
