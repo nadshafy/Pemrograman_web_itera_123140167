@@ -6,7 +6,7 @@ Aplikasi ini dirancang untuk membantu pengguna mengelola jadwal kuliah dan tugas
 
 ## Screenshot Aplikasi
 
-![Tampilan Aplikasi Personal Dashboard](Nadya Shafwah Yusuf_123140167_pertemuan2/ss_personaldashboard.png)
+![Tampilan Aplikasi Personal Dashboard](https://github.com/nadshafy/Pemrograman_web_itera_123140167/blob/main/Nadya%20Shafwah%20Yusuf_123140167_pertemuan2/ss_personaldashboard.png)
 
 ## Fitur-fitur Utama
 
