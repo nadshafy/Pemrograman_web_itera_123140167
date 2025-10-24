@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="dashboard-header">
+            <h1>Personal Dashboard</h1>
+        </header>
+
+        <section class="card calendar-section">
+            <div class="card-header">
+                <div> <h2>Agenda 7 Hari</h2>
+                    <p id="current-month-year" class="calendar-month-year"></p> </div>
+                <button id="open-modal-btn" class="btn add-btn" title="Tambah Agenda/Tugas Baru">+</button>
+            </div>
+            <div id="calendar-grid" class="calendar-grid">
+                </div>
+        </section>
+
+        <section class="card task-section">
+            <div class="card-header">
+                <h2>Daftar Tugas</h2>
+            </div>
+            <div class="card-content">
+                <ul id="task-list">
+                    <p id="no-task-msg" class="no-data-msg">Belum ada tugas.</p>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <div id="modal-backdrop" class="modal-backdrop hidden"></div>
+
+    <div id="data-modal" class="modal hidden">
+        <div class="modal-header">
+            <h2 id="modal-title">Tambah Data Baru</h2>
+            <button id="close-modal-btn" class="close-btn">&times;</button>
+        </div>
+        
+        <div class="modal-tabs">
+            <button class="tab-btn active" data-form="schedule-form">Agenda Kuliah</button>
+            <button class="tab-btn" data-form="task-form">Tugas</button>
+        </div>
+
+        <div class="modal-content">
+            <form id="schedule-form" class="form-container">
+                <input type="hidden" id="schedule-id">
+                <div class="form-group">
+                    <label for="course-name">Mata Kuliah:</label>
+                    <input type="text" id="course-name" placeholder="Contoh: Pemrograman Web" required>
+                </div>
+                <div class="form-group">
+                    <label for="lecturer-name">Dosen:</label>
+                    <input type="text" id="lecturer-name" placeholder="Contoh: Budi Santoso">
+                </div>
+                <div class="form-group">
+                    <label for="schedule-date">Tanggal:</label>
+                    <input type="date" id="schedule-date" required>
+                </div>
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="start-time">Waktu Mulai:</label>
+                        <input type="time" id="start-time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="end-time">Waktu Selesai:</label>
+                        <input type="time" id="end-time" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="room-location">Ruangan/Link:</label>
+                    <input type="text" id="room-location" placeholder="Contoh: Lab Komputer A">
+                </div>
+                <div class="form-group">
+                    <label>Warna Highlight:</label>
+                    <div class="color-picker">
+                        <input type="radio" name="color" id="color-blue" value="highlight-blue" checked>
+                        <label for="color-blue" class="color-swatch" style="--swatch-color: #e0f0ff;"></label>
+                        <input type="radio" name="color" id="color-pink" value="highlight-pink">
+                        <label for="color-pink" class="color-swatch" style="--swatch-color: #ffebf0;"></label>
+                        <input type="radio" name="color" id="color-yellow" value="highlight-yellow">
+                        <label for="color-yellow" class="color-swatch" style="--swatch-color: #fffbdd;"></label>
+                    </div>
+                </div>
+                <button type="submit" class="btn primary-btn">Simpan Agenda</button>
+            </form>
+
+            <form id="task-form" class="form-container hidden">
+                <input type="hidden" id="task-id">
+                <div class="form-group">
+                    <label for="task-name">Nama Tugas:</label>
+                    <input type="text" id="task-name" placeholder="Contoh: Laporan Praktikum Modul 2" required>
+                </div>
+                <div class="form-group">
+                    <label for="task-deadline">Deadline:</label>
+                    <input type="date" id="task-deadline" required>
+                </div>
+                <button type="submit" class="btn primary-btn">Simpan Tugas</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
